@@ -1,0 +1,161 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout current="suministros" title="Suministros Eléctricos · Casa Grande">
+<section class="view" id="view-categoria">
+  <div class="wrap" style="padding-top:32px;">
+    <div class="breadcrumb">Inicio <span class="sep">›</span> <a data-go="suministros" style="cursor:pointer;border-bottom:1px solid var(--line-2);">Suministros</a> <span class="sep">›</span> <span class="here">Eléctrico</span></div>
+  </div>
+
+  <div class="cat-hero">
+    <div class="cat-hero-left">
+      <span class="eyebrow">Categoría 01</span>
+      <h1>Suministros eléctricos</h1>
+      <p class="lede">Cables, relés, contactores y más. Para proyectos industriales de baja, media y alta tensión. Trabajamos con Siemens, Schneider, ABB, GE y Telemecanique.</p>
+      <div style="display:flex; gap:12px;">
+        <button class="btn wa">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 2 .5 3.5 1.5 5L2 22l5-1.5c1.5 1 3 1.5 5 1.5 5.5 0 10-4.5 10-10S17.5 2 12 2z"></path></svg>
+          Cotizar esta categoría
+        </button>
+      </div>
+    </div>
+    <div class="cat-hero-right"><div class="ph"></div></div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Subcategorías</span>
+          <h2>Cuatro líneas de producto.</h2>
+        </div>
+      </div>
+      <div class="subcat-grid">
+        <div class="subcat-card">
+          <div class="ph"></div>
+          <h4>Cables</h4>
+          <div class="items">TF · THW · THHW · TTU · SPT · ST</div>
+        </div>
+        <div class="subcat-card">
+          <div class="ph"></div>
+          <h4>Relés y contactores</h4>
+          <div class="items">Electromecánicos · híbridos · estado sólido</div>
+        </div>
+        <div class="subcat-card">
+          <div class="ph"></div>
+          <h4>Iluminación LED</h4>
+          <div class="items">Paneles · reflectores · industrial</div>
+        </div>
+        <div class="subcat-card">
+          <div class="ph"></div>
+          <h4>Protección y control</h4>
+          <div class="items">Breakers · interruptores · medición</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Productos destacados</span>
+          <h2>Algunas de las referencias que manejamos.</h2>
+        </div>
+        <div class="lede">Una muestra. Si su referencia no está, consúltenos — manejamos cientos más.</div>
+      </div>
+      <div class="products">
+        <article class="product">
+          <div class="ph"></div>
+          <div class="product-body">
+            <span class="brand">cables · marca X</span>
+            <h4>Cable THHW #12 AWG</h4>
+            <p class="spec">Conductor de cobre, aislamiento termoplástico 90°C.</p>
+          </div>
+          <div class="product-cta">Cotizar por WhatsApp</div>
+        </article>
+        <article class="product">
+          <div class="ph"></div>
+          <div class="product-body">
+            <span class="brand">relés · Siemens</span>
+            <h4>Contactor 3RT2025</h4>
+            <p class="spec">3 polos, AC-3, 7.5 kW @ 400 V.</p>
+          </div>
+          <div class="product-cta">Cotizar por WhatsApp</div>
+        </article>
+        <article class="product">
+          <div class="ph"></div>
+          <div class="product-body">
+            <span class="brand">iluminación · marca Y</span>
+            <h4>Panel LED 40W</h4>
+            <p class="spec">60×60 cm, luz fría 6500K, industrial.</p>
+          </div>
+          <div class="product-cta">Cotizar por WhatsApp</div>
+        </article>
+        <article class="product">
+          <div class="ph"></div>
+          <div class="product-body">
+            <span class="brand">protección · ABB</span>
+            <h4>Breaker tripolar</h4>
+            <p class="spec">100 A, capacidad de ruptura 25 kA.</p>
+          </div>
+          <div class="product-cta">Cotizar por WhatsApp</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Marcas disponibles</span>
+          <h2>En eléctrico trabajamos con:</h2>
+        </div>
+      </div>
+      <div class="brands" style="grid-template-columns:repeat(6,1fr);">
+        <div class="ph" data-brand="Siemens"></div>
+        <div class="ph" data-brand="Schneider"></div>
+        <div class="ph" data-brand="ABB"></div>
+        <div class="ph" data-brand="GE"></div>
+        <div class="ph" data-brand="Honeywell"></div>
+        <div class="ph" data-brand="Telemecanique"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt tight">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:24px;">
+        <div>
+          <span class="eyebrow">También te puede interesar</span>
+          <h2 style="font-size:32px;">Categorías relacionadas.</h2>
+        </div>
+      </div>
+      <div style="display:flex; gap:16px; flex-wrap:wrap;">
+        <button class="chip" style="padding:12px 22px; font-size:14px;">→ Iluminación</button>
+        <button class="chip" style="padding:12px 22px; font-size:14px;">→ Refrigeración</button>
+        <button class="chip" style="padding:12px 22px; font-size:14px;">→ Soldadura</button>
+        <button class="chip" style="padding:12px 22px; font-size:14px;">→ Seguridad</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="wrap">
+      <div class="cta-band-inner">
+        <h3>¿Tiene una referencia específica en mente?</h3>
+        <button class="btn wa lg">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 2 .5 3.5 1.5 5L2 22l5-1.5c1.5 1 3 1.5 5 1.5 5.5 0 10-4.5 10-10S17.5 2 12 2z"></path></svg>
+          Consultar disponibilidad
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICIOS — V1 Zigzag
+     ============================================================ -->
+</Layout>

@@ -1,0 +1,78 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const { title = 'Casa Grande · Suministros y Servicios Industriales', current } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Suministros industriales y servicios de mantenimiento eléctrico, refrigeración y obra civil en Guayana. Contratista del estado desde 2001."
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header current={current} />
+    <slot />
+    <Footer />
+
+    <script>
+      // Navegación para elementos con data-go (pilares, tarjetas, botones internos)
+      const routes: Record<string, string> = {
+        home: '/',
+        nosotros: '/nosotros',
+        suministros: '/suministros',
+        categoria: '/suministros/categoria',
+        servicios: '/servicios',
+        experiencia: '/experiencia',
+        contacto: '/contacto',
+      };
+      document.querySelectorAll<HTMLElement>('[data-go]').forEach((el) => {
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          const go = el.dataset.go;
+          if (go) window.location.href = routes[go] || '/';
+        });
+      });
+
+      // Botones de WhatsApp (FAB, CTA del header ya es <a>, y botones .btn.wa)
+      const WA = 'https://wa.me/584148984156';
+      document.querySelectorAll<HTMLElement>('.btn.wa').forEach((el) => {
+        if (el.tagName === 'A') return;
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', () => window.open(WA, '_blank'));
+      });
+
+      // Toggle visual de chips de filtro
+      document
+        .querySelectorAll('.filter-bar .chips, .table-head .chips')
+        .forEach((group) => {
+          group.addEventListener('click', (e) => {
+            const t = e.target as HTMLElement;
+            if (t.classList.contains('chip')) {
+              group.querySelectorAll('.chip').forEach((c) => c.classList.remove('active'));
+              t.classList.add('active');
+            }
+          });
+        });
+
+      // Toggle visual de radios
+      const radioGroup = document.getElementById('radioGroup');
+      if (radioGroup) {
+        radioGroup.addEventListener('change', () => {
+          radioGroup.querySelectorAll('label').forEach((l) => {
+            const input = l.querySelector('input') as HTMLInputElement | null;
+            l.classList.toggle('checked', !!input?.checked);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
