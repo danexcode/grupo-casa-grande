@@ -16,6 +16,15 @@ const { title = 'Casa Grande · Suministros y Servicios Industriales', current }
       content="Suministros industriales y servicios de mantenimiento eléctrico, refrigeración y obra civil en Guayana. Contratista del estado desde 2001."
     />
     <title>{title}</title>
+    <link rel="icon" type="image/png" href="/images/logos/logo-blanco.png" />
+    <link rel="apple-touch-icon" href="/images/logos/logo-blanco.png" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Casa Grande',
+      url: Astro.site?.href ?? Astro.url.origin,
+      logo: new URL('/images/logos/logo-with-no-bg.png', Astro.site ?? Astro.url.origin).href,
+    })} />
   </head>
   <body>
     <Header current={current} />

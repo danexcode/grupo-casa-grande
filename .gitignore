@@ -20,3 +20,8 @@ pnpm-debug.log*
 
 # os
 .DS_Store
+
+# debug / mcp artifacts
+.playwright-mcp/
+dev-*.png
+build-*.png

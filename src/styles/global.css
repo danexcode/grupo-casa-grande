@@ -489,6 +489,7 @@
     --rust:#172ab6;
     --rust-deep:#0f1c87;
     --rust-tint:#dde1f7;
+    --accent-bright:#4f6bff; /* cobalto luminoso para acentos sobre fondo oscuro (AA en navy) */
     --whatsapp:#25d366;
     --whatsapp-deep:#128c4f;
   }
@@ -529,16 +530,12 @@
     padding:18px 32px; max-width:1280px; margin:0 auto;
   }
   .logo{
-    display:flex; align-items:baseline; gap:10px;
+    display:flex; align-items:center; gap:10px;
     font-family:'Archivo',sans-serif; font-weight:900; font-size:20px; letter-spacing:-.01em;
   }
   .logo .mark{
-    width:30px; height:30px; background:var(--ink); color:var(--paper);
-    display:inline-flex; align-items:center; justify-content:center;
-    font-weight:900; font-size:14px; transform:translateY(2px);
-    border-radius:2px;
+    width:auto; height:42px; object-fit:contain;
   }
-  .logo .mark::before{ content:"CG"; }
   .logo small{ color:var(--ink-3); font-weight:500; font-size:11px; font-family:'JetBrains Mono',monospace; letter-spacing:.1em; text-transform:uppercase; }
   nav.main{ display:flex; gap:6px; }
   nav.main a{
@@ -613,11 +610,12 @@
 
   /* ============ HERO HOME ============ */
   .hero{
-    background:var(--ink); color:var(--paper);
+    background:linear-gradient(135deg, #000d4c 0%, #0f1c87 100%);
+    color:var(--paper);
     position:relative; overflow:hidden;
   }
   .hero-grid{
-    display:grid; grid-template-columns: 1.2fr .8fr;
+    display:grid; grid-template-columns: 1fr 1fr;
     gap:0; min-height:580px;
   }
   .hero-content{
@@ -633,7 +631,7 @@
     font-family:'Archivo',sans-serif; font-weight:800; font-size:74px;
     line-height:.95; letter-spacing:-.025em; margin:0 0 28px;
   }
-  .hero h1 .accent{ color:var(--rust); }
+  .hero h1 .accent{ color:var(--accent-bright); }
   .hero .sub{
     font-size:18px; line-height:1.5; color:#c3c8da; max-width:520px;
     margin-bottom:36px;
@@ -665,6 +663,11 @@
     border:none; border-bottom:1px solid #16205c;
     color:#7b8199;
   }
+  .hero-side .hero-img{
+    flex:1; min-height:0; width:100%;
+    object-fit:cover; display:block;
+    border:none; border-bottom:1px solid #16205c;
+  }
   .hero-stats{
     display:grid; grid-template-columns:repeat(2,1fr);
     border-collapse:collapse;
@@ -677,7 +680,7 @@
     font-family:'Archivo',sans-serif; font-weight:800; font-size:38px;
     line-height:1; color:#fff;
   }
-  .hero-stat .num .pre{ color:var(--rust); }
+  .hero-stat .num .pre{ color:var(--accent-bright); }
   .hero-stat .lbl{
     font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.15em;
     text-transform:uppercase; color:var(--muted); margin-top:6px;
@@ -695,16 +698,21 @@
     gap:32px; align-items:center;
   }
   .trust-inner .lead{ font-size:13px; color:var(--ink-3); font-weight:500; max-width:180px; }
-  .trust-logos{ display:grid; grid-template-columns:repeat(6,1fr); gap:0; align-items:stretch; }
-  .trust-logos .ph{
-    height:54px; background:transparent; border:none; border-left:1px solid var(--line);
-    color:var(--ink-3); font-size:10px;
+  .trust-logos{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; align-items:stretch; }
+  .trust-logos .logo-cell{
+    height:54px; display:flex; align-items:center; justify-content:center;
+    border-left:1px solid var(--line); padding:0 20px;
   }
-  .trust-logos .ph:first-child{ border-left:none; }
-  .trust-logos .ph::after{ content:"Logo"; }
+  .trust-logos .logo-cell:first-child{ border-left:none; }
+  .trust-logos .logo-cell img{
+    max-height:38px; max-width:100%; width:auto; object-fit:contain;
+    filter:grayscale(1); opacity:.7; transition:filter .2s, opacity .2s;
+  }
+  .trust-logos .logo-cell:hover img{ filter:grayscale(0); opacity:1; }
 
   /* ============ SECTION ============ */
   section{ padding:96px 0; }
+  .trust + section{ padding-top:48px; }
   section.tight{ padding:64px 0; }
   section.alt{ background:var(--paper-2); }
   section.dark{ background:var(--ink); color:var(--paper); }
@@ -775,7 +783,8 @@
     transition:transform .2s, box-shadow .2s;
   }
   .pillar:hover{ transform:translateY(-3px); box-shadow:0 12px 30px -10px rgba(0,13,76,.15); }
-  .pillar .ph{ height:240px; border:none; border-bottom:1px solid var(--line); }
+  .pillar .ph{ height:360px; border:none; border-bottom:1px solid var(--line); }
+  .pillar .pillar-img{ width:100%; height:360px; object-fit:cover; display:block; border-bottom:1px solid var(--line); }
   .pillar-body{
     padding:32px 32px 36px;
     display:flex; flex-direction:column; gap:14px; flex:1;
@@ -812,6 +821,7 @@
     display:flex; flex-direction:column;
   }
   .case .ph{ height:220px; border:none; border-bottom:1px solid var(--line); }
+  .case .case-img{ width:100%; height:220px; object-fit:cover; display:block; border-bottom:1px solid var(--line); }
   .case-body{ padding:24px; display:flex; flex-direction:column; gap:10px; flex:1; }
   .case .client{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--rust); }
   .case h4{ font-family:'Archivo',sans-serif; font-weight:700; font-size:20px; margin:0; line-height:1.2; }
@@ -840,10 +850,14 @@
   .cat-card .num{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink-3); }
   .cat-card h4{ font-family:'Archivo',sans-serif; font-weight:700; font-size:20px; margin:0; }
   .cat-card .items{ font-size:13px; color:var(--ink-3); margin-top:auto; }
+  .cat-card.cat-cta{ background:var(--rust); justify-content:center; }
+  .cat-card.cat-cta h4{ color:var(--paper); }
+  .cat-card.cat-cta .items{ color:#dde1f7; margin-top:8px; }
+  .cat-card.cat-cta:hover{ background:var(--rust-deep); }
 
   /* ============ BRAND WALL ============ */
   .brands{
-    display:grid; grid-template-columns:repeat(7,1fr); gap:1px;
+    display:grid; grid-template-columns:repeat(6,1fr); gap:1px;
     background:var(--line); border:1px solid var(--line);
   }
   .brands .ph{
@@ -887,7 +901,7 @@
   .foot-col a{ color:#c3c8da; font-size:14px; transition:color .15s; cursor:pointer; }
   .foot-col a:hover{ color:#fff; }
   .foot-brand .logo{ color:var(--paper); font-size:24px; margin-bottom:14px; }
-  .foot-brand .logo .mark{ background:var(--paper); color:var(--ink); }
+  .foot-brand .logo .mark{ width:auto; height:42px; }
   .foot-brand p{ color:#a6abbb; font-size:13px; line-height:1.5; margin:0 0 16px; max-width:280px; }
   .foot-brand .fiscal{
     font-family:'JetBrains Mono',monospace; font-size:11px; color:#90939b; line-height:1.7;
