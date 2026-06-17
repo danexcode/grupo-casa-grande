@@ -23,28 +23,38 @@ import Layout from "../layouts/Layout.astro";
   .page-hero--media .lede{ color:rgba(255,255,255,.82); }
 
   .mvv--two{ grid-template-columns:repeat(2,1fr); }
-  .values-label{ display:block; margin:48px 0 20px; }
-  .values-grid{
-    display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px;
-  }
+  .values-label{ display:flex; margin:48px 0 24px; }
+  .values{ border-top:1px solid var(--line); }
   .value{
-    border:1px solid var(--line); border-radius:12px; padding:24px;
-    background:var(--paper);
+    display:grid; grid-template-columns:64px minmax(190px,260px) 1fr; gap:32px;
+    align-items:baseline; padding:26px 4px; border-bottom:1px solid var(--line);
+    transition:background .18s ease, padding-left .18s ease;
+  }
+  .value:hover{ background:var(--paper); padding-left:16px; }
+  .value .vnum{
+    font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:.1em;
+    color:var(--rust); line-height:1.6;
   }
   .value h4{
-    font-family:'Archivo',sans-serif; font-weight:700; font-size:17px;
-    margin:0 0 10px; color:var(--ink);
+    font-family:'Archivo',sans-serif; font-weight:700; font-size:19px;
+    margin:0; color:var(--ink); letter-spacing:-.01em;
   }
   .value p{ color:var(--ink-2); line-height:1.6; font-size:14px; margin:0; }
-  @media (max-width:768px){ .mvv--two{ grid-template-columns:1fr; } }
+  @media (max-width:768px){
+    .mvv--two{ grid-template-columns:1fr; }
+    .value{ grid-template-columns:auto 1fr; gap:6px 16px; }
+    .value h4{ grid-column:2; font-size:17px; }
+    .value p{ grid-column:2; margin-top:6px; }
+    .value:hover{ padding-left:4px; }
+  }
 </style>
 <section class="view" id="view-nosotros">
   <div class="page-hero page-hero--media">
     <div class="wrap">
       <div class="breadcrumb">Inicio <span class="sep">›</span> <span class="here">Nosotros</span></div>
       <span class="eyebrow">Quiénes somos</span>
-      <h1>Integramos suministro y servicio técnico para que su planta nunca se detenga.</h1>
-      <p class="lede">Grupo Casa Grande es el integrador de soluciones para la industria pesada de Guayana — procura de equipos críticos y servicios de ingeniería, respaldados por más de 20 años de trayectoria comprobable.</p>
+      <h1>25 años manteniendo en marcha la industria de Guayana.</h1>
+      <p class="lede">Grupo Casa Grande es el integrador de soluciones para la industria pesada de la región — procura de equipos críticos y servicios de ingeniería, con un historial de contratos ejecutados al 100%.</p>
     </div>
   </div>
 
@@ -60,10 +70,10 @@ import Layout from "../layouts/Layout.astro";
           <p><strong>En 2025 esa trayectoria se consolida en Grupo Casa Grande.</strong> La misma gente, la misma palabra cumplida y los mismos veinte años de experiencia — ahora con mayor alcance, integrando la procura de equipos críticos con servicios técnicos de ingeniería.</p>
         </div>
         <aside class="side">
-          <div class="ph"></div>
-          <span class="role">Desde 2001</span>
-          <h4>100% de los contratos, ejecutados.</h4>
-          <p style="font-size:14px;color:var(--ink-3);line-height:1.55;margin:14px 0 0;">Veinte años trabajando con CVG, EDELCA, CORPOELEC y PDVSA sin un solo contrato incumplido. En servicios públicos, cumplir es la única forma de seguir trabajando.</p>
+          <img src="/images/pages/casa-grande-13.png" alt="José Crispín Rodríguez Bermúdez, fundador" style="width:100%;height:280px;object-fit:cover;margin-bottom:20px;" />
+          <span class="role">Fundador</span>
+          <h4>José Crispín Rodríguez Bermúdez</h4>
+          <p style="font-size:14px;color:var(--ink-3);line-height:1.55;margin:14px 0 0;">Al frente de las operaciones y los contratos del Estado desde 2001.</p>
         </aside>
       </div>
     </div>
@@ -102,34 +112,39 @@ import Layout from "../layouts/Layout.astro";
         <div class="mvv-card">
           <span class="num">01</span>
           <h4>Misión</h4>
-          <p>Proveer soluciones industriales integrales mediante la procura especializada de equipos críticos y la ejecución de servicios técnicos de alto nivel, garantizando la continuidad operativa y la optimización de los procesos en la industria pesada.</p>
+          <p>Proveer soluciones industriales integrales mediante la procura especializada de equipos críticos y la ejecución de servicios técnicos de alto nivel. Nos dedicamos a garantizar la continuidad operativa y la optimización de los procesos en la industria pesada, combinando tecnología de clase mundial, logística ágil y mano de obra especializada para resolver los desafíos específicos de cada planta.</p>
         </div>
         <div class="mvv-card">
           <span class="num">02</span>
           <h4>Visión</h4>
-          <p>Consolidarnos como el integrador de soluciones y el aliado estratégico más confiable del sector industrial — el puente entre un abastecimiento tecnológico de primer nivel y servicios de ingeniería y mantenimiento excepcionales.</p>
+          <p>Consolidarnos como el integrador de soluciones y el aliado estratégico más confiable para el sector industrial. Aspiramos a ser el puente definitivo que integre un abastecimiento tecnológico de primer nivel con servicios de ingeniería y mantenimiento excepcionales, transformando las operaciones de nuestros clientes en un modelo de eficiencia y rentabilidad sostenible.</p>
         </div>
       </div>
 
       <span class="eyebrow values-label">Valores corporativos</span>
-      <div class="values-grid">
+      <div class="values">
         <div class="value">
+          <span class="vnum">01</span>
           <h4>Enfoque consultivo e integral</h4>
           <p>No solo despachamos pedidos: diagnosticamos necesidades e implementamos soluciones, desde la selección del equipo hasta su puesta en marcha y mantenimiento.</p>
         </div>
         <div class="value">
+          <span class="vnum">02</span>
           <h4>Precisión y rigurosidad técnica</h4>
           <p>Validamos cada requerimiento en campo para garantizar cero margen de error, tanto en la procura de componentes como en la ejecución en sitio.</p>
         </div>
         <div class="value">
+          <span class="vnum">03</span>
           <h4>Garantía de continuidad operativa</h4>
           <p>En la industria, una hora de parada cuesta miles de dólares. Aseguramos una cadena de suministro transparente e intervenciones eficientes para que su planta no se detenga.</p>
         </div>
         <div class="value">
+          <span class="vnum">04</span>
           <h4>Integridad y claridad comercial</h4>
           <p>Relaciones basadas en la transparencia financiera y la comunicación directa, con acuerdos claros, justos y adaptados a cada cliente.</p>
         </div>
         <div class="value">
+          <span class="vnum">05</span>
           <h4>Adaptabilidad orientada a resultados</h4>
           <p>Integramos innovación tecnológica, análisis de datos y capacitación constante de nuestro personal para anticiparnos a los retos del mercado.</p>
         </div>
