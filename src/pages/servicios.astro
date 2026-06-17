@@ -9,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
       <div class="breadcrumb">Inicio <span class="sep">›</span> <span class="here">Servicios</span></div>
       <span class="eyebrow">Servicios industriales</span>
       <h1>Cuatro especialidades. 25 años haciéndolas.</h1>
-      <p class="lede">Mantenimiento y obra para CORPOELEC, CVG, PDVSA y empresas privadas de Guayana. Cada servicio respaldado por contratos del Registro Nacional de Contratistas.</p>
+      <p class="lede">Mantenimiento, obra eléctrica e infraestructura para CORPOELEC, CVG, PDVSA y empresas privadas de Guayana. Trayectoria comprobable en el Registro Nacional de Contratistas.</p>
     </div>
   </div>
 
@@ -19,7 +19,7 @@ import Layout from "../layouts/Layout.astro";
       <div class="service-media"><div class="ph"></div></div>
       <div>
         <div class="num">SERVICIO 01</div>
-        <h3>Chillers, HVAC y refrigeración industrial.</h3>
+        <h3>Climatización y Refrigeración Industrial (HVAC).</h3>
         <p>Mantenimiento preventivo y correctivo de chillers, sistemas centrales de aire acondicionado y unidades manejadoras de aire. Atendemos sistemas industriales y comerciales de cualquier capacidad.</p>
         <div class="clients">
           <div class="lbl">Experiencia comprobable</div>
@@ -29,7 +29,7 @@ import Layout from "../layouts/Layout.astro";
             <li>Centro de Rehabilitación Dr. Carlos Fragachan</li>
           </ul>
         </div>
-        <button class="btn rust">Solicitar cotización</button>
+        <button class="btn rust" data-go="contacto" data-tipo="serv" data-ref="Climatización y Refrigeración Industrial (HVAC)">Solicitar cotización</button>
       </div>
     </div>
 
@@ -37,8 +37,36 @@ import Layout from "../layouts/Layout.astro";
       <div class="service-media"><div class="ph"></div></div>
       <div>
         <div class="num">SERVICIO 02</div>
-        <h3>Mantenimiento de corredores eléctricos.</h3>
-        <p>Especialistas en desmalezamiento de líneas de transmisión a 115 kV, 400 kV y 765 kV. Mantenimiento de áreas verdes y vías de acceso del sistema de transmisión troncal y regional.</p>
+        <h3>Proyectos Eléctricos e Iluminación Industrial.</h3>
+        <p>Ejecución de obras eléctricas bajo estrictos estándares de seguridad: cableado de potencia, canalizaciones en conduit rígido y tableros de control. Instalación de iluminación exterior y Highbay (reflectores LED) para líneas de producción y áreas de almacenamiento.</p>
+        <div class="clients">
+          <div class="lbl">Capacidad técnica</div>
+          <ul>
+            <li>Cableado de potencia y canalizaciones</li>
+            <li>Tableros de control (breakers)</li>
+            <li>Iluminación Highbay y reflectores LED</li>
+          </ul>
+        </div>
+        <button class="btn rust" data-go="contacto" data-tipo="serv" data-ref="Proyectos Eléctricos e Iluminación Industrial">Solicitar cotización</button>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-media"><div class="ph"></div></div>
+      <div>
+        <div class="num">SERVICIO 03</div>
+        <h3>Adecuación y Mantenimiento de Espacios Corporativos.</h3>
+        <p>Renovación y acondicionamiento de oficinas, fachadas y áreas administrativas: pintura industrial y comercial, acabados arquitectónicos, sistemas de control solar (persianas corporativas) y mantenimiento preventivo de infraestructura civil.</p>
+        <button class="btn rust" data-go="contacto" data-tipo="serv" data-ref="Adecuación y Mantenimiento de Espacios Corporativos">Solicitar cotización</button>
+      </div>
+    </div>
+
+    <div class="service reverse">
+      <div class="service-media"><div class="ph"></div></div>
+      <div>
+        <div class="num">SERVICIO 04</div>
+        <h3>Control de Vegetación y Mantenimiento de Corredores Eléctricos.</h3>
+        <p>Especialistas en desmalezamiento de líneas de transmisión a 115 kV, 400 kV y 765 kV, con maquinaria pesada sobre oruga y equipos rotativos para terrenos irregulares y despeje masivo. Mantenimiento de áreas verdes y vías de acceso del sistema de transmisión troncal y regional.</p>
         <div class="clients">
           <div class="lbl">Experiencia comprobable</div>
           <ul>
@@ -47,34 +75,7 @@ import Layout from "../layouts/Layout.astro";
             <li>EDELCA · Sistema de Transmisión Oriente</li>
           </ul>
         </div>
-        <button class="btn rust">Solicitar cotización</button>
-      </div>
-    </div>
-
-    <div class="service">
-      <div class="service-media"><div class="ph"></div></div>
-      <div>
-        <div class="num">SERVICIO 03</div>
-        <h3>Instalaciones eléctricas BT / MT / AT.</h3>
-        <p>Proyectos eléctricos industriales: diseño, instalación y mantenimiento en baja, media y alta tensión. Tableros, transformadores, líneas y sistemas de protección.</p>
-        <div class="clients">
-          <div class="lbl">Capacidad técnica</div>
-          <ul>
-            <li>Personal calificado en MT y AT</li>
-            <li>Equipos certificados para trabajo en altura</li>
-          </ul>
-        </div>
-        <button class="btn rust">Solicitar cotización</button>
-      </div>
-    </div>
-
-    <div class="service reverse">
-      <div class="service-media"><div class="ph"></div></div>
-      <div>
-        <div class="num">SERVICIO 04</div>
-        <h3>Refrescamiento y remodelación de espacios.</h3>
-        <p>Renovación y acondicionamiento de oficinas, fachadas, áreas administrativas y de atención al público. Acabados, pintura, mobiliario industrial liviano.</p>
-        <button class="btn rust">Solicitar cotización</button>
+        <button class="btn rust" data-go="contacto" data-tipo="serv" data-ref="Control de Vegetación y Mantenimiento de Corredores Eléctricos">Solicitar cotización</button>
       </div>
     </div>
 
@@ -84,12 +85,12 @@ import Layout from "../layouts/Layout.astro";
     <div class="wrap">
       <div class="rnc-card" style="background:var(--paper); color:var(--ink); border:1px solid var(--line);">
         <div class="rnc-seal">
-          <span class="x">+30</span>
+          <span class="x">17</span>
           <span class="y">OBRAS · 100%</span>
         </div>
         <div>
           <h3 style="font-size:30px;">Contratista del Estado · RNC vigente</h3>
-          <p class="lede" style="color:var(--ink-3);">Habilitados para contratar con la Administración Pública Nacional, Estadal y Municipal. Treinta contratos ejecutados al 100% — sin retrasos, sin reclamos.</p>
+          <p class="lede" style="color:var(--ink-3);">Habilitados para contratar con la Administración Pública Nacional, Estadal y Municipal. 17 contratos ejecutados al 100% — sin retrasos, sin reclamos.</p>
         </div>
         <button class="btn ghost" data-go="experiencia">Ver historial</button>
       </div>
@@ -100,7 +101,7 @@ import Layout from "../layouts/Layout.astro";
     <div class="wrap">
       <div class="cta-band-inner">
         <h3>¿Listo para su próximo proyecto?</h3>
-        <button class="btn wa lg">
+        <button class="btn wa lg" data-wa-msg="Hola, Grupo Casa Grande. Quiero cotizar un servicio industrial.">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.943c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.582 0 11.94-5.359 11.944-11.945a11.864 11.864 0 0 0-3.495-8.426"></path></svg>
           Hablemos por WhatsApp
         </button>

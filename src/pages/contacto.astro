@@ -45,7 +45,7 @@ import Layout from "../layouts/Layout.astro";
           </div>
           <span class="label">correo</span>
           <h4>Email formal</h4>
-          <div class="num-big" style="font-size:14px; word-break:break-word;">corpcasagrande<wbr>@gmail.com</div>
+          <div class="num-big" style="font-size:14px; word-break:break-word;">grupocasagrandeint<wbr>@gmail.com</div>
           <p class="desc">Para órdenes de compra, cotizaciones formales y documentación.</p>
           <button class="btn ghost">Escribir</button>
         </div>
@@ -154,4 +154,60 @@ import Layout from "../layouts/Layout.astro";
 <!-- ============================================================
      FOOTER
      ============================================================ -->
+
+<script>
+  // Precarga del formulario según el botón de origen (?tipo=&ref=)
+  const params = new URLSearchParams(window.location.search);
+  const tipo = params.get('tipo');
+  const ref = (params.get('ref') || '').slice(0, 160);
+
+  if (tipo) {
+    const radio = document.querySelector<HTMLInputElement>(
+      `input[name="tipo"][value="${tipo}"]`
+    );
+    if (radio) {
+      radio.checked = true;
+      document
+        .querySelectorAll('#radioGroup label')
+        .forEach((l) => l.classList.remove('checked'));
+      radio.closest('label')?.classList.add('checked');
+    }
+  }
+
+  const textarea = document.querySelector<HTMLTextAreaElement>('.cotiz textarea');
+
+  if (ref && textarea) {
+    const plantillas: Record<string, string> = {
+      serv: `Quiero cotizar el servicio de ${ref}. Mi requerimiento:`,
+      sum: `Quiero cotizar ${ref}. Cantidad y detalles:`,
+    };
+    textarea.value = plantillas[tipo ?? ''] ?? `Quiero cotizar ${ref}. Detalles:`;
+  }
+
+  // Si llegó desde un botón con contexto, baja al formulario (scroll lento) y enfoca
+  if ((tipo || ref) && textarea) {
+    const form = textarea.closest('form') ?? textarea;
+    const targetY =
+      form.getBoundingClientRect().top + window.scrollY - 140; // un poco más arriba
+    const startY = window.scrollY;
+    const dist = targetY - startY;
+    const duration = 600; // ms
+    const ease = (t: number) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    const t0 = performance.now();
+
+    const step = (now: number) => {
+      const p = Math.min((now - t0) / duration, 1);
+      window.scrollTo(0, startY + dist * ease(p));
+      if (p < 1) {
+        requestAnimationFrame(step);
+      } else {
+        textarea.focus({ preventScroll: true });
+        const end = textarea.value.length;
+        textarea.setSelectionRange(end, end);
+      }
+    };
+    requestAnimationFrame(step);
+  }
+</script>
 </Layout>

@@ -37,26 +37,45 @@ const { title = 'Casa Grande · Suministros y Servicios Industriales', current }
         home: '/',
         nosotros: '/nosotros',
         suministros: '/suministros',
-        categoria: '/suministros/categoria',
         servicios: '/servicios',
         experiencia: '/experiencia',
         contacto: '/contacto',
       };
-      document.querySelectorAll<HTMLElement>('[data-go]').forEach((el) => {
+      document.querySelectorAll<HTMLElement>('[data-go], [data-href]').forEach((el) => {
         el.style.cursor = 'pointer';
         el.addEventListener('click', (e) => {
           e.preventDefault();
+          // Ruta literal (slugs dinámicos) tiene prioridad
+          if (el.dataset.href) {
+            window.location.href = el.dataset.href;
+            return;
+          }
           const go = el.dataset.go;
-          if (go) window.location.href = routes[go] || '/';
+          if (!go) return;
+          let url = routes[go] || '/';
+          // Precarga del formulario de contacto según el botón de origen
+          if (go === 'contacto' && (el.dataset.tipo || el.dataset.ref)) {
+            const q = new URLSearchParams();
+            if (el.dataset.tipo) q.set('tipo', el.dataset.tipo);
+            if (el.dataset.ref) q.set('ref', el.dataset.ref);
+            url += '?' + q.toString();
+          }
+          window.location.href = url;
         });
       });
 
       // Botones de WhatsApp (FAB, CTA del header ya es <a>, y botones .btn.wa)
       const WA = 'https://wa.me/584148984156';
-      document.querySelectorAll<HTMLElement>('.btn.wa').forEach((el) => {
-        if (el.tagName === 'A') return;
+      const waUrl = (msg?: string) =>
+        msg ? `${WA}?text=${encodeURIComponent(msg)}` : WA;
+      document.querySelectorAll<HTMLElement>('.btn.wa, a.fab, [data-wa-msg]').forEach((el) => {
+        const target = waUrl(el.dataset.waMsg);
+        if (el.tagName === 'A') {
+          (el as HTMLAnchorElement).href = target;
+          return;
+        }
         el.style.cursor = 'pointer';
-        el.addEventListener('click', () => window.open(WA, '_blank'));
+        el.addEventListener('click', () => window.open(target, '_blank'));
       });
 
       // Toggle visual de chips de filtro
