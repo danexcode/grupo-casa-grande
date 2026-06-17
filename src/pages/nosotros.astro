@@ -3,13 +3,48 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout current="nosotros" title="Nosotros · Casa Grande">
+<style>
+  .page-hero--media{
+    position:relative;
+    background:#0a0a0a url('/images/pages/casa-grande-13.png') center/cover no-repeat;
+    border-bottom:none;
+  }
+  .page-hero--media::before{
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(120deg, rgba(10,10,10,.92) 0%, rgba(10,10,10,.7) 45%, rgba(10,10,10,.25) 100%);
+    pointer-events:none;
+  }
+  .page-hero--media .wrap{ position:relative; z-index:1; }
+  .page-hero--media .breadcrumb{ color:rgba(255,255,255,.7); }
+  .page-hero--media .breadcrumb .sep{ color:rgba(255,255,255,.35); }
+  .page-hero--media h1,
+  .page-hero--media .eyebrow{ color:#fff; }
+  .page-hero--media .lede{ color:rgba(255,255,255,.82); }
+
+  .mvv--two{ grid-template-columns:repeat(2,1fr); }
+  .values-label{ display:block; margin:48px 0 20px; }
+  .values-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px;
+  }
+  .value{
+    border:1px solid var(--line); border-radius:12px; padding:24px;
+    background:var(--paper);
+  }
+  .value h4{
+    font-family:'Archivo',sans-serif; font-weight:700; font-size:17px;
+    margin:0 0 10px; color:var(--ink);
+  }
+  .value p{ color:var(--ink-2); line-height:1.6; font-size:14px; margin:0; }
+  @media (max-width:768px){ .mvv--two{ grid-template-columns:1fr; } }
+</style>
 <section class="view" id="view-nosotros">
-  <div class="page-hero">
+  <div class="page-hero page-hero--media">
     <div class="wrap">
       <div class="breadcrumb">Inicio <span class="sep">›</span> <span class="here">Nosotros</span></div>
       <span class="eyebrow">Quiénes somos</span>
-      <h1>Más de dos décadas construyendo confianza en la industria venezolana.</h1>
-      <p class="lede">Casa Grande nació en Puerto Ordaz en 2001 con un propósito sencillo — abastecer y mantener a la industria pesada de Guayana con seriedad técnica.</p>
+      <h1>Integramos suministro y servicio técnico para que su planta nunca se detenga.</h1>
+      <p class="lede">Grupo Casa Grande es el integrador de soluciones para la industria pesada de Guayana — procura de equipos críticos y servicios de ingeniería, respaldados por más de 20 años de trayectoria comprobable.</p>
     </div>
   </div>
 
@@ -19,16 +54,16 @@ import Layout from "../layouts/Layout.astro";
         <div class="body">
           <span class="eyebrow">Nuestra historia</span>
           <h2 style="font-family:'Archivo';font-weight:800;font-size:36px;letter-spacing:-.02em;margin:14px 0 28px;line-height:1.1;">Empezamos despachando desde un patio. Hoy mantenemos líneas de 765 kV.</h2>
-          <p><strong>Fundada en 2001 por José Crispín Rodríguez Bermúdez y Yajaira Josefina Sánchez de Rodríguez</strong>, Casa Grande nació en Puerto Ordaz para abastecer a las empresas básicas del Estado Bolívar — CVG, CORPOELEC, las plantas de Sidor, Alcasa, Venalum y sus filiales.</p>
-          <p>En 2004 ganamos nuestro primer gran contrato con la CVG: la fabricación de canales metálicos y el mantenimiento del sistema HVAC del Hospital Uyapar. Cuatro años después estábamos limpiando los corredores de servicio de las líneas de 400 kV de EDELCA. En 2011 construimos la entrada de la planta Boquerón para PDVSA.</p>
-          <p>Desde el 2014 hemos sido contratistas activos de CORPOELEC para el mantenimiento de las líneas de 765 kV, los sectores A y B del Sistema de Transmisión Troncal.</p>
-          <p><strong>Hoy operamos bajo el paraguas del Grupo Casa Grande</strong> — la continuación natural de la trayectoria comercial de Corporación Casa Grande, C.A. (RIF J-30876669-0), con el mismo equipo, los mismos valores y veinte años de experiencia comprobable.</p>
+          <p><strong>Todo empezó en 2001 como Corporación Casa Grande, C.A.</strong>, fundada en Puerto Ordaz por José Crispín Rodríguez Bermúdez y Yajaira Josefina Sánchez de Rodríguez para abastecer y mantener a las empresas básicas del Estado Bolívar — CVG, EDELCA y, más tarde, CORPOELEC y PDVSA.</p>
+          <p>En 2004 ganamos nuestro primer gran contrato con la CVG: la fabricación de canales metálicos. Al año siguiente reparamos el sistema de chillers y UMAS del Hospital Uyapar. En 2008 limpiábamos los corredores de servicio de las líneas de 400 kV de EDELCA, y en 2011 construimos la entrada de la planta Boquerón para PDVSA.</p>
+          <p>Desde 2014 somos contratistas activos del mantenimiento de las líneas de 765 kV de CORPOELEC, sectores A y B del Sistema de Transmisión Troncal — el tipo de trabajo que no perdona errores.</p>
+          <p><strong>En 2025 esa trayectoria se consolida en Grupo Casa Grande.</strong> La misma gente, la misma palabra cumplida y los mismos veinte años de experiencia — ahora con mayor alcance, integrando la procura de equipos críticos con servicios técnicos de ingeniería.</p>
         </div>
         <aside class="side">
           <div class="ph"></div>
-          <span class="role">Fundador</span>
-          <h4>José Crispín Rodríguez Bermúdez</h4>
-          <p style="font-size:14px;color:var(--ink-3);line-height:1.55;margin:14px 0 0;">"Aquí cumplir es la única manera de seguir trabajando. Los contratos de servicios públicos no perdonan medias tintas."</p>
+          <span class="role">Desde 2001</span>
+          <h4>100% de los contratos, ejecutados.</h4>
+          <p style="font-size:14px;color:var(--ink-3);line-height:1.55;margin:14px 0 0;">Veinte años trabajando con CVG, EDELCA, CORPOELEC y PDVSA sin un solo contrato incumplido. En servicios públicos, cumplir es la única forma de seguir trabajando.</p>
         </aside>
       </div>
     </div>
@@ -45,11 +80,11 @@ import Layout from "../layouts/Layout.astro";
         <div class="timeline-nodes">
           <div class="tl-node"><div class="dot"></div><div class="year">2001</div><div class="desc">Fundación · Puerto Ordaz</div></div>
           <div class="tl-node active"><div class="dot"></div><div class="year">2004</div><div class="desc">Primer contrato CVG · canales metálicos</div></div>
-          <div class="tl-node active"><div class="dot"></div><div class="year">2005</div><div class="desc">HVAC Hospital Uyapar</div></div>
-          <div class="tl-node active"><div class="dot"></div><div class="year">2008</div><div class="desc">CORPOELEC · primer programa</div></div>
+          <div class="tl-node active"><div class="dot"></div><div class="year">2005</div><div class="desc">Chillers · Hospital Uyapar</div></div>
+          <div class="tl-node active"><div class="dot"></div><div class="year">2008</div><div class="desc">EDELCA · corredores 400 kV</div></div>
           <div class="tl-node active"><div class="dot"></div><div class="year">2011</div><div class="desc">PDVSA Boquerón</div></div>
-          <div class="tl-node active"><div class="dot"></div><div class="year">2016</div><div class="desc">Líneas 765 kV · lote A y B</div></div>
-          <div class="tl-node"><div class="dot"></div><div class="year">2025</div><div class="desc">Grupo Casa Grande</div></div>
+          <div class="tl-node active"><div class="dot"></div><div class="year">2014</div><div class="desc">765 kV · sectores A y B</div></div>
+          <div class="tl-node"><div class="dot"></div><div class="year">2025</div><div class="desc">Nace Grupo Casa Grande</div></div>
         </div>
       </div>
     </div>
@@ -63,21 +98,40 @@ import Layout from "../layouts/Layout.astro";
           <h2>Misión, visión y valores.</h2>
         </div>
       </div>
-      <div class="mvv">
+      <div class="mvv mvv--two">
         <div class="mvv-card">
           <span class="num">01</span>
           <h4>Misión</h4>
-          <p>Proporcionar productos y servicios de la más alta calidad que satisfagan las necesidades de nuestros clientes, contribuyendo al crecimiento y desarrollo de sus operaciones.</p>
+          <p>Proveer soluciones industriales integrales mediante la procura especializada de equipos críticos y la ejecución de servicios técnicos de alto nivel, garantizando la continuidad operativa y la optimización de los procesos en la industria pesada.</p>
         </div>
         <div class="mvv-card">
           <span class="num">02</span>
           <h4>Visión</h4>
-          <p>Ser empresa líder en suministro de productos a nivel regional y nacional, reconocida por nuestra excelencia en el servicio y calidad de nuestros productos.</p>
+          <p>Consolidarnos como el integrador de soluciones y el aliado estratégico más confiable del sector industrial — el puente entre un abastecimiento tecnológico de primer nivel y servicios de ingeniería y mantenimiento excepcionales.</p>
         </div>
-        <div class="mvv-card">
-          <span class="num">03</span>
-          <h4>Valores</h4>
-          <p>Compromiso, cumplimiento al 100%, transparencia con el cliente, capacidad técnica y arraigo en la comunidad industrial guayanesa.</p>
+      </div>
+
+      <span class="eyebrow values-label">Valores corporativos</span>
+      <div class="values-grid">
+        <div class="value">
+          <h4>Enfoque consultivo e integral</h4>
+          <p>No solo despachamos pedidos: diagnosticamos necesidades e implementamos soluciones, desde la selección del equipo hasta su puesta en marcha y mantenimiento.</p>
+        </div>
+        <div class="value">
+          <h4>Precisión y rigurosidad técnica</h4>
+          <p>Validamos cada requerimiento en campo para garantizar cero margen de error, tanto en la procura de componentes como en la ejecución en sitio.</p>
+        </div>
+        <div class="value">
+          <h4>Garantía de continuidad operativa</h4>
+          <p>En la industria, una hora de parada cuesta miles de dólares. Aseguramos una cadena de suministro transparente e intervenciones eficientes para que su planta no se detenga.</p>
+        </div>
+        <div class="value">
+          <h4>Integridad y claridad comercial</h4>
+          <p>Relaciones basadas en la transparencia financiera y la comunicación directa, con acuerdos claros, justos y adaptados a cada cliente.</p>
+        </div>
+        <div class="value">
+          <h4>Adaptabilidad orientada a resultados</h4>
+          <p>Integramos innovación tecnológica, análisis de datos y capacitación constante de nuestro personal para anticiparnos a los retos del mercado.</p>
         </div>
       </div>
     </div>
@@ -97,7 +151,7 @@ import Layout from "../layouts/Layout.astro";
           <div class="founder-body">
             <span class="role">Co-fundador</span>
             <h4>José Crispín Rodríguez Bermúdez</h4>
-            <p>Operaciones, contratos del Estado y obras de campo. Más de tres décadas trabajando con CORPOELEC, EDELCA y PDVSA.</p>
+            <p>Operaciones, contratos del Estado y obras de campo. Más de dos décadas al frente de los proyectos con CORPOELEC, EDELCA y PDVSA.</p>
           </div>
         </div>
         <div class="founder">
@@ -121,7 +175,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div>
           <h3>Habilitados como contratistas del Estado.</h3>
-          <p class="lede">Inscritos en el Registro Nacional de Contratistas (SNC) — habilitados para contratar con la Administración Pública Nacional, Estadal y Municipal en bienes, servicios y obras.</p>
+          <p class="lede">Corporación Casa Grande, C.A. está inscrita en el Registro Nacional de Contratistas — habilitada para contratar con la Administración Pública Nacional, Estadal y Municipal en bienes, servicios y obras. Es la base legal de experiencia sobre la que opera Grupo Casa Grande.</p>
           <div class="data"><span>Nº Comprobante</span> 1462945308766690240 &nbsp; <span>· vigencia</span> 30·06·2025 – 30·06·2026</div>
         </div>
         <button class="btn rust">Descargar certificado</button>
@@ -140,8 +194,8 @@ import Layout from "../layouts/Layout.astro";
       <div class="map-block">
         <div class="ph"></div>
         <div class="map-body">
-          <h3>Urb. Terrazas del Caroní</h3>
-          <div class="addr">MZ 11, Casa 6D<br>Puerto Ordaz · Estado Bolívar<br>Venezuela</div>
+          <h3>C.C. Plaza Aeropuerto</h3>
+          <div class="addr">Calle Neverí cruce con Carrera Uchire<br>Nivel 1, Local P-1-B-03 · Sector UD-286<br>Puerto Ordaz · Estado Bolívar · Venezuela</div>
           <div class="hours">Lun – Vie · 8:00 AM – 5:00 PM<br>Sáb · 8:00 AM – 12:00 PM</div>
           <div style="margin-top:8px;"><button class="btn ghost sm">Cómo llegar →</button></div>
         </div>
@@ -154,7 +208,7 @@ import Layout from "../layouts/Layout.astro";
       <div class="cta-band-inner">
         <h3>Trabajemos juntos.</h3>
         <button class="btn wa lg">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 2 .5 3.5 1.5 5L2 22l5-1.5c1.5 1 3 1.5 5 1.5 5.5 0 10-4.5 10-10S17.5 2 12 2z"></path></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.943c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.582 0 11.94-5.359 11.944-11.945a11.864 11.864 0 0 0-3.495-8.426"></path></svg>
           Cotizar por WhatsApp
         </button>
       </div>
