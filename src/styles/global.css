@@ -504,6 +504,8 @@
   .display{ font-family:'Archivo',sans-serif; font-weight:800; letter-spacing:-.02em; line-height:1; }
   .display-2{ font-family:'Archivo',sans-serif; font-weight:700; letter-spacing:-.015em; line-height:1.05; }
   .mono{ font-family:'JetBrains Mono',monospace; font-feature-settings:"ss01"; }
+  /* cualquier elemento navegable (slugs, rutas internas) muestra cursor de enlace */
+  [data-go], [data-href]{ cursor:pointer; }
   .label{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); }
   .label.accent{ color:var(--rust); }
   .label.paper{ color:var(--paper-2); opacity:.8; }
